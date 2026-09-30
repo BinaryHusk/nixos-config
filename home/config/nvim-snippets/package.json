@@ -1,0 +1,15 @@
+{
+  "name": "amos-nvim-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "./global.json"
+      },
+      {
+        "language": "scala",
+        "path": "./scala.json"
+      }
+    ]
+  }
+}

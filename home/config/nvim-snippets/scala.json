@@ -1,0 +1,54 @@
+{
+  "case class": {
+    "prefix": "case_class",
+    "body": "case class ${1:CaseClassName}(${2:argName}: ${3:ArgType})",
+    "description": "Case class with one argument"
+  },
+  "case class with two arguments": {
+    "prefix": "case_class_2",
+    "body": [
+      "case class ${1:CaseClassName}(",
+      "\t${2:arg1Name}: ${3:Arg1Type},",
+      "\t${4:arg2Name}: ${5:Arg2Type},",
+      ")"
+    ],
+    "description": "Case class with two arguments"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:Name}:", "\tcase ${2:Foo}, ${3:Bar}"],
+    "description": "Scala enumeration"
+  },
+  "algebra": {
+    "prefix": "algebra",
+    "body": [
+      "trait ${1:Algebra}[F[_]]:",
+      "\tdef ${2:methodName}: F[${3:returnType}]"
+    ],
+    "description": "Abstract algebra encoding"
+  },
+  "IOApp": {
+    "prefix": "app",
+    "body": [
+      "import cats.effect.*",
+      "",
+      "object ${1:Main} extends IOApp.Simple:",
+      "\tdef run: IO[Unit] =",
+      "\t\t${2:IO.println(\"Hello, world!\")}"
+    ],
+    "description": "Main object extending IOApp.Simple"
+  },
+  "method": {
+    "prefix": "def",
+    "body": [
+      "def ${1:methodName}(${2:argName}: ${3:ArgType}): ${4:ReturnType} =",
+      "\t${5:???}"
+    ],
+    "description": "Scala method"
+  },
+  "for comprehension": {
+    "prefix": "forc",
+    "body": ["for", "\t${1:x} <- ${2:IO.pure(1)}", "yield ${3:()}"],
+    "description": "For-comprehension"
+  }
+}
